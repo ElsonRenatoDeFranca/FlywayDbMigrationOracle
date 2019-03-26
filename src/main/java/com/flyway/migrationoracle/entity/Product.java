@@ -8,20 +8,18 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "PRODUCT")
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "name")
 public class Product implements Serializable{
 
     private static final long serialVersionUID = 1L;
@@ -29,11 +27,7 @@ public class Product implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRODUCT_SEQ")
     @SequenceGenerator(sequenceName = "PRODUCT_SEQ", allocationSize = 1, name = "PRODUCT_SEQ")
-
     private Long id;
-
-    @Column(name = "PRODUCT_ID", length = 20)
-    private Long productId;
 
     @Column(name = "PRODUCT_NAME", length = 50)
     private String name;

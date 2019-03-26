@@ -30,8 +30,8 @@ public class ProductServiceImpl implements IProductService {
 
 
     @Override
-    public Product findProductById(Long productId) {
-        return productRepository.findByproductId(productId);
+    public Product findProductById(Long id) {
+        return productRepository.findByid(id);
     }
 
     @Override
@@ -65,13 +65,15 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public void removeProduct(Long id) throws ProductNotFoundException {
+    public void deleteProductById(Long id) throws ProductNotFoundException {
         Product searchedProduct = this.findProductById(id);
 
         if(searchedProduct == null){
             throw new ProductNotFoundException(CartAppConstants.PRODUCT_NOT_FOUND_ERROR_MESSAGE);
         }
-        productRepository.delete(searchedProduct);
+        //productRepository.delete(searchedProduct);
+        productRepository.deleteById(id);
+
     }
 
 }

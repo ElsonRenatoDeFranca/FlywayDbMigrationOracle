@@ -4,8 +4,11 @@ import com.flyway.migrationoracle.constants.CartAppConstants;
 import com.flyway.migrationoracle.entity.Cart;
 import com.flyway.migrationoracle.entity.Product;
 import com.flyway.migrationoracle.exception.CartNotFoundException;
+import com.flyway.migrationoracle.exception.ProductNotFoundException;
 import com.flyway.migrationoracle.repository.CartRepository;
+import com.flyway.migrationoracle.repository.ProductRepository;
 import com.flyway.migrationoracle.service.ICartService;
+import com.flyway.migrationoracle.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +21,12 @@ public class CartServiceImpl implements ICartService {
 
     @Autowired
     private CartRepository cartRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private IProductService productService;
 
     @Override
     public List<Cart> findAll() {
@@ -45,6 +54,14 @@ public class CartServiceImpl implements ICartService {
     public Cart createCart() {
         Cart newCart = new Cart();
         return cartRepository.save(newCart);
+    }
+
+    @Override
+    public Cart removeProductFromCart(Long cartId, Product product) throws CartNotFoundException, ProductNotFoundException {
+        Cart cart = this.findCartById(cartId);
+        cart.getProducts().removeIf(p -> p.equals(product));
+        cartRepository.delete(cart);
+        return cart;
     }
 
 }

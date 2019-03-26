@@ -28,15 +28,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- Runtime -->
-		<!--
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-
-		</dependency>
-		-->
-
 		<!-- added for creating application -->
 
 		<dependency>
@@ -86,15 +77,6 @@
 					<user>flywayuser</user>
 					<password>flywayuseradmin</password>
 				</configuration>
-<!--				<dependencies>
-
-					<dependency>
-						<groupId>com.oracle</groupId>
-						<artifactId>ojdbc6</artifactId>
-						<version>11.2.0.3</version>
-					</dependency>
-				</dependencies>
-				-->
 			</plugin>
 
 		</plugins>

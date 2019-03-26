@@ -12,10 +12,10 @@ public interface IProductService {
 
     /**
      *
-     * @param productId
+     * @param id
      * @return
      */
-    Product findProductById(Long productId);
+    Product findProductById(Long id);
 
 
     /**
@@ -46,6 +46,6 @@ public interface IProductService {
      * @param id
      * @throws ProductNotFoundException
      */
-    void removeProduct(Long id) throws ProductNotFoundException;
+    void deleteProductById(Long id) throws ProductNotFoundException;
 
 }

@@ -3,7 +3,6 @@ C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle
 C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle\src\main\java\com\flyway\migrationoracle\controller\ProductController.java
 C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle\src\main\java\com\flyway\migrationoracle\exception\ProductAlreadyExistsException.java
 C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle\src\main\java\com\flyway\migrationoracle\service\impl\CartServiceImpl.java
-C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle\src\main\java\com\flyway\migrationoracle\config\RestTemplateConfig.java
 C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle\src\main\java\com\flyway\migrationoracle\controller\CartController.java
 C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle\src\main\java\com\flyway\migrationoracle\service\impl\ProductServiceImpl.java
 C:\Development\PetProjects\FlyWayDatabaseMigrationOracle\FlywayDbMigrationOracle\src\main\java\com\flyway\migrationoracle\exception\CartAlreadyExistsException.java

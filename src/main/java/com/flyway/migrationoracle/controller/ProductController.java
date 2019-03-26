@@ -40,10 +40,10 @@ public class ProductController {
 
     }
 
-    @RequestMapping(method=RequestMethod.DELETE, value="/products/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Product> removeProduct(@PathVariable(name="id") Long id) throws ProductNotFoundException {
+    @RequestMapping(method=RequestMethod.DELETE, value="/products/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Product> removeProduct(@PathVariable(name="id") Long productId) throws ProductNotFoundException {
         try {
-            productService.removeProduct(id);
+            productService.deleteProductById(productId);
             return new ResponseEntity<> (HttpStatus.OK);
         } catch (ProductNotFoundException ex) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

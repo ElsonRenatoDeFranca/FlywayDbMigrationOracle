@@ -4,6 +4,7 @@ package com.flyway.migrationoracle.service;
 import com.flyway.migrationoracle.entity.Cart;
 import com.flyway.migrationoracle.entity.Product;
 import com.flyway.migrationoracle.exception.CartNotFoundException;
+import com.flyway.migrationoracle.exception.ProductNotFoundException;
 
 import java.util.List;
 
@@ -40,6 +41,16 @@ public interface ICartService {
      * @return
      */
     Cart createCart();
+
+    /**
+     *
+     * @param cartId
+     * @param product
+     * @return
+     * @throws CartNotFoundException
+     * @throws ProductNotFoundException
+     */
+    Cart removeProductFromCart(Long cartId, Product product)  throws CartNotFoundException, ProductNotFoundException;
 
 
 }

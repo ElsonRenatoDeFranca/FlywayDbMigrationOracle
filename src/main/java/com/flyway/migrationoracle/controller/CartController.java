@@ -66,6 +66,16 @@ public class CartController {
             return new ResponseEntity<> (persistedCart,HttpStatus.BAD_REQUEST);
         }
 
+    }
+
+    @RequestMapping(method=RequestMethod.DELETE,value="/cart/{cartId}/products",  produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Cart> removeProductIntoCart(@PathVariable Long cartId, @RequestBody Product product){
+        try {
+            Cart cartSaved = this.cartService.removeProductFromCart(cartId, product);
+            return new ResponseEntity<>(cartSaved, HttpStatus.OK);
+        }catch(CartNotFoundException | ProductNotFoundException ex){
+            return new ResponseEntity<> (HttpStatus.BAD_REQUEST);
+        }
 
     }
 
