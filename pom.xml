@@ -73,9 +73,7 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>4.0.1</version>
 				<configuration>
-					<url>jdbc:oracle:thin:@//ech-10-157-150-237.mastercard.int:1527/devcloud</url>
-					<user>devadmin</user>
-					<password>devadmin123</password>
+					
 				</configuration>
 			</plugin>
 
