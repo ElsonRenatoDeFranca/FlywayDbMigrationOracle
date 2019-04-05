@@ -10,7 +10,7 @@ pipeline {
 
         stage('Flyway info - before migration') {
             steps {
-                sh "flywayInfo"
+                sh "mvn compile flyway:info"
             }
         }
 
