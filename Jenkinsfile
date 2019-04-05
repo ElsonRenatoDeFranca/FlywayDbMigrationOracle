@@ -10,7 +10,7 @@ pipeline {
 
         stage('Flyway info - before migration') {
             steps {
-                sh "flyway info"
+                sh "flywayInfo"
             }
         }
 
