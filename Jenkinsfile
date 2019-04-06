@@ -10,19 +10,19 @@ pipeline {
 
         stage('Flyway info - before migration') {
             steps {
-                sh "mvn -Dflyway.url=jdbc:oracle:thin:@ech-10-157-150-237.mastercard.int:1527:devcloud -Dflyway.user=FLYWAYUSER -Dflyway.password=flywayuser123 flyway:info"
+                sh "mvn flyway:info"
             }
         }
 
         stage('Flyway migrate') {
             steps {
-                sh "mvn -Dflyway.url=jdbc:oracle:thin:@ech-10-157-150-237.mastercard.int:1527:devcloud -Dflyway.user=FLYWAYUSER -Dflyway.password=flywayuser123 flyway:migrate"
+                sh "mvn flyway:migrate"
             }
         }
 
         stage('Flyway info - after migration') {
             steps {
-                sh "mvn -Dflyway.url=jdbc:oracle:thin:@ech-10-157-150-237.mastercard.int:1527:devcloud -Dflyway.user=FLYWAYUSER -Dflyway.password=flywayuser123 flyway:info"
+                sh "mvn flyway:info"
             }
         }
     }
