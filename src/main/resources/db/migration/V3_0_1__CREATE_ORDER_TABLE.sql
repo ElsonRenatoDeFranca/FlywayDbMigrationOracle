@@ -19,7 +19,8 @@ DECLARE
 
        BEGIN
 
-			   EXECUTE IMMEDIATE 'CREATE TABLE ' || V_SCHEMA_NAME || '.' || V_TABLE_NAME || '( ID NUMBER (10,0) NOT NULL, CONSTRAINT ORDER_ID_PK PRIMARY KEY(ID))';
+			   --EXECUTE IMMEDIATE 'CREATE TABLE ' || V_SCHEMA_NAME || '.' || V_TABLE_NAME || '( ID NUMBER (10,0) NOT NULL, CONSTRAINT ORDER_ID_PK PRIMARY KEY(ID))';
+			   EXECUTE IMMEDIATE 'CREATE TABLE ' || V_SCHEMA_NAME || '.' || V_TABLE_NAME || '( ID NUMBER (10,0) NOT NULL)';
 
 			   EXCEPTION WHEN OTHERS THEN
 			       IF SQLCODE != -00955 -- Name already used by an existing object (For more details refer to error code described at header);
