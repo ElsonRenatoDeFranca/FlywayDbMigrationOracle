@@ -10,19 +10,19 @@ pipeline {
 
         stage('Flyway info - before migration') {
             steps {
-                sh "mvn flyway:info"
+                sh "mvn -Dflyway.url=\$ENV.flywayurl -Dflyway.user=\$ENV.flywayusr -Dflyway.password=\$ENV.flywaypwd flyway:info"
             }
         }
 
         stage('Flyway migrate') {
             steps {
-                sh "mvn flyway:migrate"
+                sh "mvn -Dflyway.url=\$ENV.flywayurl -Dflyway.user=\$ENV.flywayusr -Dflyway.password=\$ENV.flywaypwd flyway:migrate"
             }
         }
 
         stage('Flyway info - after migration') {
             steps {
-                sh "mvn flyway:info"
+                sh "mvn -Dflyway.url=\$ENV.flywayurl -Dflyway.user=\$ENV.flywayusr -Dflyway.password=\$ENV.flywaypwd flyway:info"
             }
         }
     }
