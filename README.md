@@ -16,3 +16,10 @@ This project introduces the basics of data migration using Flyway, Maven, SQL an
 > mvn flyway:baseline - Baselines an existing database, excluding all migrations up to and including baselineVersion.
 
 
+Jenkins environment variables
+
+To create a new environment variable at Jenkins:
+
+1- Jenkins -> Manage Jenkins -> Configure System -> Environment Variables
+
+
