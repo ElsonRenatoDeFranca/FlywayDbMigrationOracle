@@ -10,6 +10,7 @@ com\flyway\migrationoracle\repository\CartRepository.class
 com\flyway\migrationoracle\controller\ProductController.class
 com\flyway\migrationoracle\service\ICartService.class
 com\flyway\migrationoracle\demoApp\FlywayDbMigrationOracleApplication.class
+com\flyway\migrationoracle\entity\Customer.class
 com\flyway\migrationoracle\service\impl\CartServiceImpl.class
 com\flyway\migrationoracle\exception\CartAlreadyExistsException.class
 com\flyway\migrationoracle\service\IProductService.class
