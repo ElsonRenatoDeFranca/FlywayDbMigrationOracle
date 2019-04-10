@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        flywayArgs = "-Dflyway.url=$FLYWAYURL -Dflyway.user=$FLYWAYUSR -Dflyway.password=$FLYWAYPWD"
+    }
+
     stages {
         stage('Checkout git') {
             steps {
@@ -10,19 +14,20 @@ pipeline {
 
         stage('Flyway info - before migration') {
             steps {
-                sh "mvn -Dflyway.url=\$ENV.flywayurl -Dflyway.user=\$ENV.flywayusr -Dflyway.password=\$ENV.flywaypwd flyway:info"
+                sh 'mvn flyway:info $flywayArgs'
+
             }
         }
 
         stage('Flyway migrate') {
             steps {
-                sh "mvn -Dflyway.url=\$ENV.flywayurl -Dflyway.user=\$ENV.flywayusr -Dflyway.password=\$ENV.flywaypwd flyway:migrate"
+                sh 'mvn flyway:migrate $flywayArgs'
             }
         }
 
         stage('Flyway info - after migration') {
             steps {
-                sh "mvn -Dflyway.url=\$ENV.flywayurl -Dflyway.user=\$ENV.flywayusr -Dflyway.password=\$ENV.flywaypwd flyway:info"
+                sh 'mvn flyway:info $flywayArgs'
             }
         }
     }
